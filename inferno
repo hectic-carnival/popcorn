@@ -11,12 +11,14 @@ case $1 in
         if [ -z "$2" ]; then
             swift-format --in-place --recursive --configuration Tooling/formatterrc.json "Popcorn"
         else
-            echo "${@:2}"
             swift-format --in-place --configuration Tooling/formatterrc.json ${@:2}
         fi
         ;;
     sformat)
         swift-format ${@:2}
+        ;;
+    test)
+        xcodebuild clean test -project Popcorn/Popcorn.xcodeproj -scheme Popcorn -destination 'platform=iOS Simulator,OS=13.3,name=iPad Pro (11-inch)'
         ;;
     *)
         echo "Invalid command."
