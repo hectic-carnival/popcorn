@@ -1,2 +1,6 @@
 #!/bin/bash
-./inferno format
+
+while read -r file; do
+    ./inferno format $file
+done < $(git diff --name-only --cached | grep ".*\.swift$")
+git add $(git diff --name-only --cached)

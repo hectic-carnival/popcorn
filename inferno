@@ -11,6 +11,7 @@ case $1 in
         if [ -z "$2" ]; then
             swift-format --in-place --recursive --configuration Tooling/formatterrc.json "Popcorn"
         else
+            echo "${@:2}"
             swift-format --in-place --configuration Tooling/formatterrc.json ${@:2}
         fi
         ;;
