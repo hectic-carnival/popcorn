@@ -7,6 +7,13 @@ case $1 in
         git submodule update --init --recursive
         cd Tooling/swift-format && swift build -c release
         ;;
+    format)
+        if [ -z "$2" ]; then
+            swift-format --in-place --recursive --configuration Tooling/formatterrc.json "Popcorn"
+        else
+            swift-format --in-place --configuration Tooling/formatterrc.json ${@:2}
+        fi
+        ;;
     sformat)
         swift-format ${@:2}
         ;;
