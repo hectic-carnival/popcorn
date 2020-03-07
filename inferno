@@ -1,0 +1,17 @@
+#!/bin/bash
+
+PATH=$PATH:Tooling/swift-format/.build/release/
+case $1 in
+    setup)
+        git config core.hooksPath Tooling/hooks
+        git submodule update --init --recursive
+        cd Tooling/swift-format && swift build -c release
+        ;;
+    sformat)
+        swift-format ${@:2}
+        ;;
+    *)
+        echo "Invalid command."
+        ;;
+esac
+
