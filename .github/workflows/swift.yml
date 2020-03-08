@@ -11,5 +11,7 @@ jobs:
         runs-on: macos-latest
         steps:
         - uses: actions/checkout@v2
+        - name: Lint
+          run: ./inferno lint
         - name: Build & Test
           run: ./inferno test

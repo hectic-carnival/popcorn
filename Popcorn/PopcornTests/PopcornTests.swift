@@ -10,4 +10,8 @@ import XCTest
 
 @testable import Popcorn
 
-class PopcornTests: XCTestCase {}
+class PopcornTests: XCTestCase {
+    func testExample() {
+        XCTAssertTrue(true)
+    }
+}

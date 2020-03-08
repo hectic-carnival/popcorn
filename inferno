@@ -11,6 +11,10 @@ case $1 in
     sformat)
         swiftformat ${@:2}
         ;;
+    lint)
+        swiftformat --lint "Popcorn"
+        swiftlint
+        ;;
     test)
         xcodebuild clean test -project Popcorn/Popcorn.xcodeproj -scheme Popcorn -destination 'platform=iOS Simulator,OS=13.3,name=iPad Pro (11-inch)'
         xcodebuild clean test -project Popcorn/Popcorn.xcodeproj -scheme Popcorn -destination 'platform=iOS Simulator,OS=13.3,name=iPhone 11 Pro'

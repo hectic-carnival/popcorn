@@ -18,6 +18,7 @@ class GameViewController: UIViewController {
         // including entities and graphs.
         if let scene = GKScene(fileNamed: "GameScene") {
             // Get the SKScene from the loaded GKScene
+            // swiftlint:disable:next force_cast
             if let sceneNode = scene.rootNode as! GameScene? {
                 // Copy gameplay related content over to the scene
                 sceneNode.entities = scene.entities
@@ -27,6 +28,7 @@ class GameViewController: UIViewController {
                 sceneNode.scaleMode = .aspectFill
 
                 // Present the scene
+                // swiftlint:disable:next force_cast
                 if let view = self.view as! SKView? {
                     view.presentScene(sceneNode)
 

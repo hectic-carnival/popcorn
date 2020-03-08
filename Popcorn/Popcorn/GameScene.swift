@@ -53,6 +53,7 @@ class GameScene: SKScene {
     }
 
     func touchDown(atPoint pos: CGPoint) {
+        // swiftlint:disable:next force_cast
         if let n = spinnyNode?.copy() as! SKShapeNode? {
             n.position = pos
             n.strokeColor = SKColor.green
@@ -61,6 +62,7 @@ class GameScene: SKScene {
     }
 
     func touchMoved(toPoint pos: CGPoint) {
+        // swiftlint:disable:next force_cast
         if let n = spinnyNode?.copy() as! SKShapeNode? {
             n.position = pos
             n.strokeColor = SKColor.blue
@@ -69,6 +71,7 @@ class GameScene: SKScene {
     }
 
     func touchUp(atPoint pos: CGPoint) {
+        // swiftlint:disable:next force_cast
         if let n = spinnyNode?.copy() as! SKShapeNode? {
             n.position = pos
             n.strokeColor = SKColor.red
