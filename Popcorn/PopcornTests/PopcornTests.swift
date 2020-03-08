@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import Popcorn
 
 class PopcornTests: XCTestCase {

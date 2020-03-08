@@ -6,8 +6,8 @@
 //  Copyright © 2020 Hectic Carnival. All rights reserved.
 //
 
-import SpriteKit
 import GameplayKit
+import SpriteKit
 
 class GameScene: SKScene {
 
@@ -46,7 +46,7 @@ class GameScene: SKScene {
                 SKAction.sequence([
                     SKAction.wait(forDuration: 0.5),
                     SKAction.fadeOut(withDuration: 0.5),
-                    SKAction.removeFromParent()
+                    SKAction.removeFromParent(),
                 ])
             )
         }
@@ -100,7 +100,7 @@ class GameScene: SKScene {
         // Called before each frame is rendered
 
         // Initialize _lastUpdateTime if it has not already been
-        if (self.lastUpdateTime == 0) {
+        if self.lastUpdateTime == 0 {
             self.lastUpdateTime = currentTime
         }
 

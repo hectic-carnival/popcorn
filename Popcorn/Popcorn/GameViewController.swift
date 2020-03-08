@@ -6,9 +6,9 @@
 //  Copyright © 2020 Hectic Carnival. All rights reserved.
 //
 
-import UIKit
-import SpriteKit
 import GameplayKit
+import SpriteKit
+import UIKit
 
 class GameViewController: UIViewController {
 
