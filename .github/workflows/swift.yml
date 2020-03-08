@@ -1,4 +1,4 @@
-name: Swift
+name: Lint & Test
 
 on:
     push:
@@ -7,7 +7,7 @@ on:
         branches: [ master ]
 
 jobs:
-    build:
+    lint:
         runs-on: macos-latest
         steps:
         - uses: actions/checkout@v2
@@ -16,5 +16,11 @@ jobs:
               brew install swiftformat
               brew install swiftlint
               ./inferno lint
+
+    test:
+        runs-on: macos-latest
+        steps:
+        - uses: actions/checkout@v2
         - name: Build & Test
-          run: ./inferno test
+          run: |
+              ./inferno test
