@@ -12,6 +12,9 @@ jobs:
         steps:
         - uses: actions/checkout@v2
         - name: Lint
-          run: ./inferno lint
+          run: |
+              brew install swiftformat
+              brew install swiftlint
+              ./inferno lint
         - name: Build & Test
           run: ./inferno test
