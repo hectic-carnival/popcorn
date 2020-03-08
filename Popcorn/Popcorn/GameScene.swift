@@ -10,7 +10,6 @@ import GameplayKit
 import SpriteKit
 
 class GameScene: SKScene {
-
     var entities = [GKEntity]()
     var graphs = [String: GKGraph]()
 
@@ -40,7 +39,9 @@ class GameScene: SKScene {
             spinnyNode.lineWidth = 2.5
 
             spinnyNode.run(
-                SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1))
+                SKAction.repeatForever(
+                    SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)
+                )
             )
             spinnyNode.run(
                 SKAction.sequence([
@@ -92,7 +93,9 @@ class GameScene: SKScene {
         for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }
 
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesCancelled(
+        _ touches: Set<UITouch>, with event: UIEvent?
+    ) {
         for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }
 
