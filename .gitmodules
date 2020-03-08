@@ -1,3 +1,0 @@
-[submodule "Tooling/swift-format"]
-	path = Tooling/swift-format
-	url = git@github.com:apple/swift-format.git
